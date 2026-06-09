@@ -26,6 +26,7 @@ This was done to improve security and limit access to potentially harmful or unn
 
 *Figure 1.1: Blocking unwanted websites through the FortiGate web filter profile.*
 
+
 ## Application and IPS Signature Review
 
 I reviewed the application and IPS signatures available on the firewall to identify applications and vulnerabilities that may pose high risks to the network.
@@ -36,9 +37,11 @@ This was done to understand which applications or signatures could be blocked in
 
 *Figure 2.1: Reviewing application signatures on the firewall.*
 
+
 ![IPS Signatures](screenshots/ips_signatures.png)
 
 *Figure 2.2: Reviewing IPS signatures and high-risk detections.*
+
 
 ## Streaming Service Restriction
 
@@ -50,11 +53,13 @@ To achieve this, I created address objects for both streaming platforms and used
 
 *Figure 3.1: Creating address objects for streaming platforms.*
 
+
 After creating the addresses, I grouped them into an address group called **Streaming_Platforms**.
 
 ![Creating Group](screenshots/creating_a_group.png)
 
 *Figure 3.2: Grouping streaming platform addresses into a single address group.*
+
 
 I then created a firewall policy and used the address group as the destination object.
 
@@ -64,6 +69,7 @@ An important part of this configuration was the arrangement of the policy. I ens
 
 *Figure 3.3: Firewall policy arrangement to prioritize streaming restrictions.*
 
+
 ## Blocking a Specific IP Address
 
 I created an address object to block access to a specific IP address. A comment was also added to explain the reason for blocking the IP address for easier administration and documentation.
@@ -71,6 +77,7 @@ I created an address object to block access to a specific IP address. A comment 
 ![Blocked IP Address](screenshots/block_a_particular_ip_address.png)
 
 *Figure 4.1: Blocking a specific IP address with documented comments.*
+
 
 ## Virtual IP (VIP) Configuration
 
@@ -87,11 +94,13 @@ This enabled external users to access an internal service through a controlled a
 
 *Figure 5.1: Creating a Virtual IP (VIP) for external access to an internal service.*
 
+
 After configuring the VIP, I created a firewall policy to allow access through the configured Virtual IP.
 
 ![VIP Policy](screenshots/creating_policy_using_vip.png)
 
 *Figure 5.2: Firewall policy allowing access through the configured VIP.*
+
 
 ## Site-to-Site VPN Configuration
 
@@ -110,17 +119,21 @@ After completing the required settings, I reviewed the configuration and submitt
 
 *Figure 6.1: Initial VPN configuration and pre-shared key setup.*
 
+
 ![VPN Setup 2](screenshots/Setting_up_vpn_2.png)
 
 *Figure 6.2: Configuring accessible IP addresses.*
+
 
 ![VPN Setup 3](screenshots/Setting_up_vpn_3.png)
 
 *Figure 6.3: Configuring interfaces and local subnets.*
 
+
 ![VPN Setup 4](screenshots/Setting_up_vpn_4.png)
 
 *Figure 6.4: Reviewing and completing VPN configuration.*
+
 
 ## Administrative Access Control
 
@@ -139,9 +152,11 @@ For the **IT_Intern** profile, most permissions were configured as **read-only**
 
 *Figure 7.1: Creating an administrator profile for IT interns.*
 
+
 ![SOC Analyst Profile](screenshots/creating_a_profile_for_junior_soc_analyst.png)
 
 *Figure 7.2: Creating an administrator profile for a junior SOC analyst.*
+
 
 After creating the profiles, I created user accounts and assigned the appropriate administrator profile to each user.
 
@@ -149,11 +164,13 @@ After creating the profiles, I created user accounts and assigned the appropriat
 
 *Figure 7.3: Assigning administrator profiles to firewall users.*
 
+
 Additionally, I restricted the **IT_Intern** administrator account to log in only from a trusted host computer with a specified IP address to control the devices allowed to access the firewall.
 
 ![Trusted Host Restriction](screenshots/restricting_the_device_for_logon.png)
 
 *Figure 7.4: Restricting firewall login to a trusted host device.*
+
 
 ## Findings and Challenges
 
